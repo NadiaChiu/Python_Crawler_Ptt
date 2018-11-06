@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag
 from write2db import Write2Sqlite
 
+PAGE_COUNT = 5
 URL_PTT_BASE = 'https://www.ptt.cc'
 URL_PTT_TRAVEL = URL_PTT_BASE + '/bbs/Gossiping/index.html'
 COOKIES = {'over18': '1'}
@@ -96,7 +97,7 @@ if __name__ == '__main__':
     _l_post_url = []
 
     # 先將每頁的po文url解出來
-    for _page in tqdm(range(1)):
+    for _page in tqdm(range(PAGE_COUNT)):
         _res = requests.get(_post_url, cookies=COOKIES)
         if _res.status_code != 200:
             print(_res.status_code)

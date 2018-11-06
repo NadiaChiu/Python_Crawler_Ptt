@@ -1,7 +1,5 @@
-# import pyodbc
 import os
 import sqlite3
-# import numpy as np
 
 # 發文表
 TABLE_POST_COL = ['id', 'board', 'code', 'author', 'title', 'dt', 'content']
