@@ -6,7 +6,7 @@ from write2db import Write2Sqlite
 
 PAGE_COUNT = 5
 URL_PTT_BASE = 'https://www.ptt.cc'
-URL_PTT_TRAVEL = URL_PTT_BASE + '/bbs/Gossiping/index.html'
+URL_PTT_BOARD = URL_PTT_BASE + '/bbs/Gossiping/index.html'
 COOKIES = {'over18': '1'}
 
 
@@ -93,7 +93,7 @@ def get_next_page(soup):
 
 
 if __name__ == '__main__':
-    _post_url = URL_PTT_TRAVEL
+    _post_url = URL_PTT_BOARD
     _l_post_url = []
 
     # 先將每頁的po文url解出來
