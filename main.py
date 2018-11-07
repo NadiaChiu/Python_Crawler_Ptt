@@ -49,7 +49,7 @@ def parser_post_info(url):
     # remove node : push
     pushes = main_content.find_all('div', class_='push')
     for push in pushes:
-        pushinfo = {'board': board}
+        pushinfo = {}
         try:
             pushinfo['user'] = push.select('span.f3.hl.push-userid')[0].text
             pushinfo['ipdt'] = push.select('span.push-ipdatetime')[0].text

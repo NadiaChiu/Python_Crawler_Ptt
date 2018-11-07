@@ -4,7 +4,7 @@ import sqlite3
 # 發文表
 TABLE_POST_COL = ['id', 'board', 'code', 'author', 'title', 'dt', 'content']
 CREATE_TABLE_POST = 'CREATE TABLE IF NOT EXISTS pttpost(' \
-                    'id INTEGER, ' \
+                    'id INTEGER UNIQUE, ' \
                     'board TEXT,' \
                     'code TEXT UNIQUE,' \
                     'author TEXT,' \
@@ -15,10 +15,9 @@ DATA_INSERT_POST = 'INSERT INTO pttpost ({collist}) VALUES({values})'.format(
     collist=','.join(TABLE_POST_COL), values=','.join(['?'] * len(TABLE_POST_COL)))
 
 # 推文表
-TABLE_PUSH_COL = ['pttpost_id', 'board', 'user', 'ipdt', 'tag', 'content']
+TABLE_PUSH_COL = ['pttpost_id', 'user', 'ipdt', 'tag', 'content']
 CREATE_TABLE_PUSH = 'CREATE TABLE IF NOT EXISTS pttpush(' \
                     'pttpost_id INTEGER,' \
-                    'board TEXT,' \
                     'user TEXT,' \
                     'ipdt TEXT,' \
                     'tag TEXT,' \
