@@ -28,7 +28,7 @@ DATA_INSERT_PUSH = 'INSERT INTO pttpush ({collist}) VALUES({values})'.format(
 
 class Write2Sqlite:
     def __init__(self):
-        self._path = os.path.join(os.getcwd(), 'db\\mydb.db')
+        self._path = os.path.join(os.getcwd(), 'db', 'mydb.db')
         if os.path.exists(self._path):
             os.remove(self._path)
         else:
